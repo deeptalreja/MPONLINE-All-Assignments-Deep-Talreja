@@ -15,8 +15,8 @@ A content-based movie recommendation web application built with **Python**, **Fl
 
 ## 🔗 Project Links
 
-- **Live Web Application:** _add your Render URL here after deployment_
-- **GitHub Repository:** _add your repo URL here_
+- **Live Web Application:**  https://movie-recommendation-system-by-deep.onrender.com/
+- **GitHub Repository:**  https://github.com/deeptalreja/Movie-Recommendation-System-by-Deep-Talreja
 
 ---
 

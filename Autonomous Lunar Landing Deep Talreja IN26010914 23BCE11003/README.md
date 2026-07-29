@@ -13,7 +13,7 @@ A Deep Reinforcement Learning project focused on training an autonomous spacecra
 
 **Email ID:** deep.23bce11003@vitbhopal.ac.in 
 
-* **Development Environment:** macOS (Apple Silicon M2 Pro/Max/Base architecture)
+* **Development Environment:** macOS (Apple Silicon M1/Base architecture)
 
 ---
 

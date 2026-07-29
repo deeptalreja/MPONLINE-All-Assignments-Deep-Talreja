@@ -1,0 +1,8 @@
+PPO CartPole-v1 Evaluation Report
+========================================
+Episodes evaluated : 100
+Mean reward        : 500.00
+Std deviation       : 0.00
+Solved (>= 475)     : Yes
+========================================
+Author: Deep Talreja

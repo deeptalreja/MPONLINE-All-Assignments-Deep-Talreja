@@ -1,0 +1,101 @@
+movieId,title,genres
+1,Toy Story (1995),Adventure|Animation|Children|Comedy|Fantasy
+2,Jumanji (1995),Adventure|Children|Fantasy
+3,Heat (1995),Action|Crime|Thriller
+4,Sense and Sensibility (1995),Drama|Romance
+5,Braveheart (1995),Action|Drama|War
+6,Get Shorty (1995),Comedy|Crime|Thriller
+7,Se7en (1995),Mystery|Thriller
+8,The Usual Suspects (1995),Crime|Mystery|Thriller
+9,Pulp Fiction (1994),Crime|Drama
+10,Forrest Gump (1994),Comedy|Drama|Romance
+11,The Shawshank Redemption (1994),Crime|Drama
+12,The Lion King (1994),Adventure|Animation|Children|Drama|Musical
+13,Speed (1994),Action|Romance|Thriller
+14,True Lies (1994),Action|Adventure|Comedy|Romance
+15,Interview with the Vampire (1994),Drama|Horror
+16,The Mask (1994),Action|Comedy|Crime|Fantasy
+17,Léon: The Professional (1994),Action|Crime|Drama|Thriller
+18,Dumb and Dumber (1994),Adventure|Comedy
+19,Clear and Present Danger (1994),Action|Crime|Drama|Thriller
+20,Speed 2: Cruise Control (1997),Action|Romance|Thriller
+21,Jurassic Park (1993),Action|Adventure|Sci-Fi|Thriller
+22,Schindler's List (1993),Drama|War
+23,The Fugitive (1993),Action|Crime|Thriller
+24,In the Line of Fire (1993),Action|Thriller
+25,The Sixth Sense (1999),Drama|Horror|Mystery
+26,Terminator 2: Judgment Day (1991),Action|Sci-Fi
+27,The Silence of the Lambs (1991),Crime|Horror|Thriller
+28,Aladdin (1992),Adventure|Animation|Children|Comedy|Musical
+29,Batman (1989),Action|Crime|Thriller
+30,Home Alone (1990),Children|Comedy
+31,Ghost (1990),Comedy|Drama|Fantasy|Romance|Thriller
+32,Dances with Wolves (1990),Adventure|Drama|Western
+33,Back to the Future (1985),Adventure|Comedy|Sci-Fi
+34,The Matrix (1999),Action|Sci-Fi|Thriller
+35,The Sixth Day (2000),Action|Sci-Fi|Thriller
+36,Gladiator (2000),Action|Adventure|Drama
+37,Mission: Impossible II (2000),Action|Adventure|Thriller
+38,X-Men (2000),Action|Adventure|Sci-Fi
+39,Cast Away (2000),Adventure|Drama
+40,Memento (2000),Mystery|Thriller
+41,Shrek (2001),Adventure|Animation|Children|Comedy|Fantasy|Romance
+42,The Lord of the Rings: The Fellowship of the Ring (2001),Adventure|Fantasy
+43,Harry Potter and the Sorcerer's Stone (2001),Adventure|Children|Fantasy
+44,Ocean's Eleven (2001),Crime|Thriller
+45,A Beautiful Mind (2001),Drama|Romance
+46,Spider-Man (2002),Action|Adventure|Sci-Fi
+47,The Bourne Identity (2002),Action|Mystery|Thriller
+48,Minority Report (2002),Action|Mystery|Sci-Fi|Thriller
+49,Finding Nemo (2003),Adventure|Animation|Children|Comedy
+50,Pirates of the Caribbean: The Curse of the Black Pearl (2003),Action|Adventure|Comedy|Fantasy
+51,The Lord of the Rings: The Return of the King (2003),Action|Adventure|Drama|Fantasy
+52,Kill Bill: Vol. 1 (2003),Action|Crime|Thriller
+53,Eternal Sunshine of the Spotless Mind (2004),Drama|Romance|Sci-Fi
+54,The Incredibles (2004),Action|Adventure|Animation|Children|Comedy
+55,Batman Begins (2005),Action|Crime|Drama
+56,War of the Worlds (2005),Action|Adventure|Sci-Fi|Thriller
+57,King Kong (2005),Action|Adventure|Drama|Fantasy
+58,The Departed (2006),Crime|Drama|Thriller
+59,Pirates of the Caribbean: Dead Man's Chest (2006),Action|Adventure|Comedy|Fantasy
+60,Casino Royale (2006),Action|Adventure|Thriller
+61,The Prestige (2006),Drama|Mystery|Sci-Fi|Thriller
+62,300 (2007),Action|Drama|War
+63,Transformers (2007),Action|Adventure|Sci-Fi|Thriller
+64,No Country for Old Men (2007),Crime|Drama|Thriller
+65,The Dark Knight (2008),Action|Crime|Drama|Thriller
+66,Iron Man (2008),Action|Adventure|Sci-Fi
+67,WALL-E (2008),Adventure|Animation|Children|Romance|Sci-Fi
+68,Slumdog Millionaire (2008),Drama|Romance
+69,Up (2009),Adventure|Animation|Children|Drama
+70,Avatar (2009),Action|Adventure|Fantasy|Sci-Fi
+71,Inception (2010),Action|Crime|Mystery|Sci-Fi|Thriller
+72,Toy Story 3 (2010),Adventure|Animation|Children|Comedy|Fantasy
+73,The Social Network (2010),Drama
+74,Thor (2011),Action|Adventure|Fantasy
+75,Captain America: The First Avenger (2011),Action|Adventure|Sci-Fi
+76,The Avengers (2012),Action|Adventure|Sci-Fi
+77,The Dark Knight Rises (2012),Action|Crime|Drama|Thriller
+78,Django Unchained (2012),Drama|Western
+79,Life of Pi (2012),Adventure|Drama|Fantasy
+80,Gravity (2013),Drama|Sci-Fi|Thriller
+81,Interstellar (2014),Adventure|Drama|Sci-Fi
+82,Guardians of the Galaxy (2014),Action|Adventure|Comedy|Sci-Fi
+83,The Imitation Game (2014),Drama|Thriller|War
+84,Mad Max: Fury Road (2015),Action|Adventure|Sci-Fi|Thriller
+85,Inside Out (2015),Adventure|Animation|Children|Comedy|Drama|Fantasy
+86,The Martian (2015),Adventure|Drama|Sci-Fi
+87,Arrival (2016),Drama|Mystery|Sci-Fi
+88,La La Land (2016),Comedy|Drama|Musical|Romance
+89,Doctor Strange (2016),Action|Adventure|Fantasy|Sci-Fi
+90,Get Out (2017),Horror|Mystery|Thriller
+91,Coco (2017),Adventure|Animation|Children|Comedy|Fantasy|Musical
+92,Blade Runner 2049 (2017),Drama|Mystery|Sci-Fi|Thriller
+93,Avengers: Infinity War (2018),Action|Adventure|Sci-Fi|Thriller
+94,Black Panther (2018),Action|Adventure|Sci-Fi
+95,A Quiet Place (2018),Drama|Horror|Sci-Fi|Thriller
+96,Spider-Man: Into the Spider-Verse (2018),Action|Adventure|Animation|Sci-Fi
+97,Parasite (2019),Comedy|Drama|Thriller
+98,Joker (2019),Crime|Drama|Thriller
+99,Avengers: Endgame (2019),Action|Adventure|Drama|Sci-Fi
+100,Knives Out (2019),Comedy|Crime|Drama|Mystery

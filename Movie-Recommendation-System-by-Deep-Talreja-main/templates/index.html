@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Movie Recommendation System</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --curtain-black: #0b0b0e;
+    --curtain-maroon: #1a0e12;
+    --panel: #17161b;
+    --panel-line: #2b2830;
+    --gold: #f2c14e;
+    --gold-dim: #a8862f;
+    --gold-glow: rgba(242, 193, 78, 0.35);
+    --ink: #f2f0eb;
+    --ink-dim: #9a94a3;
+  }
+
+  * { box-sizing: border-box; }
+
+  html, body {
+    margin: 0;
+    min-height: 100vh;
+    background:
+      radial-gradient(ellipse 1000px 600px at 50% 0%, rgba(242,193,78,0.07), transparent 60%),
+      radial-gradient(ellipse 900px 700px at 50% 100%, rgba(120, 20, 40, 0.12), transparent 65%),
+      var(--curtain-black);
+    color: var(--ink);
+    font-family: 'Inter', sans-serif;
+  }
+
+  body { padding: 40px 16px 60px; display: flex; flex-direction: column; align-items: center; }
+
+  /* --- MARQUEE HEADER --- */
+  .marquee {
+    position: relative;
+    padding: 18px 40px;
+    border: 2px solid var(--gold);
+    border-radius: 10px;
+    margin-bottom: 8px;
+    box-shadow: 0 0 30px var(--gold-glow);
+  }
+  .marquee::before, .marquee::after {
+    content: "";
+    position: absolute;
+    left: 10px; right: 10px;
+    height: 6px;
+    background-image: radial-gradient(circle, var(--gold) 2px, transparent 2.5px);
+    background-size: 16px 6px;
+    background-repeat: repeat-x;
+    animation: bulbs 1.6s steps(2) infinite;
+  }
+  .marquee::before { top: 6px; }
+  .marquee::after { bottom: 6px; }
+  @keyframes bulbs {
+    0% { opacity: 1; }
+    50% { opacity: 0.35; }
+    100% { opacity: 1; }
+  }
+
+  .marquee h1 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(2rem, 6vw, 3rem);
+    letter-spacing: 0.06em;
+    margin: 0;
+    color: var(--gold);
+    text-align: center;
+    text-shadow: 0 0 18px var(--gold-glow);
+  }
+
+  .subtitle {
+    color: var(--ink-dim);
+    font-size: 0.92rem;
+    text-align: center;
+    max-width: 460px;
+    margin: 14px 0 34px;
+  }
+
+  /* --- MAIN TICKET PANEL --- */
+  .panel {
+    width: 100%;
+    max-width: 520px;
+    background: var(--panel);
+    border-radius: 14px;
+    border: 1px solid var(--panel-line);
+    box-shadow: 0 25px 60px -20px rgba(0,0,0,0.7);
+    position: relative;
+    padding: 30px 28px;
+  }
+  .panel::before, .panel::after {
+    content: "";
+    position: absolute;
+    left: 0; right: 0;
+    height: 12px;
+    background-image: radial-gradient(circle, var(--curtain-black) 5px, transparent 5.5px);
+    background-size: 22px 12px;
+    background-repeat: repeat-x;
+    background-position: center;
+  }
+  .panel::before { top: -6px; }
+  .panel::after { bottom: -6px; }
+
+  .section-label {
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--gold-dim);
+    margin-bottom: 14px;
+  }
+
+  select {
+    width: 100%;
+    padding: 12px 14px;
+    background: #100f13;
+    border: 1px solid var(--panel-line);
+    color: var(--ink);
+    font-family: 'Inter', sans-serif;
+    font-size: 0.95rem;
+    border-radius: 9px;
+    appearance: none;
+    background-image: linear-gradient(45deg, transparent 50%, var(--gold-dim) 50%), linear-gradient(135deg, var(--gold-dim) 50%, transparent 50%);
+    background-position: calc(100% - 18px) center, calc(100% - 13px) center;
+    background-size: 5px 5px, 5px 5px;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    transition: border-color 0.15s, box-shadow 0.15s;
+  }
+  select:focus {
+    outline: none;
+    border-color: var(--gold);
+    box-shadow: 0 0 0 3px var(--gold-glow);
+  }
+
+  .go-btn {
+    width: 100%;
+    margin-top: 18px;
+    background: linear-gradient(180deg, var(--gold), var(--gold-dim));
+    color: #1a1408;
+    font-weight: 700;
+    font-size: 0.98rem;
+    letter-spacing: 0.02em;
+    border: none;
+    padding: 13px;
+    border-radius: 9px;
+    cursor: pointer;
+    transition: transform 0.1s ease, box-shadow 0.15s ease;
+  }
+  .go-btn:hover {
+    box-shadow: 0 8px 22px -6px var(--gold-glow);
+    transform: translateY(-1px);
+  }
+  .go-btn:active { transform: translateY(0); }
+
+  /* --- RESULTS --- */
+  .results { margin-top: 26px; }
+  .results-heading {
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ink-dim);
+    margin-bottom: 12px;
+    display: none;
+  }
+  .results-heading.visible { display: block; }
+
+  .rec-card {
+    background: #100f13;
+    border: 1px solid var(--panel-line);
+    border-left: 3px solid var(--gold);
+    border-radius: 8px;
+    padding: 12px 14px;
+    margin-bottom: 10px;
+  }
+  .rec-title {
+    font-weight: 700;
+    font-size: 0.95rem;
+    color: var(--ink);
+    margin-bottom: 4px;
+  }
+  .rec-genres {
+    font-size: 0.78rem;
+    color: var(--ink-dim);
+    margin-bottom: 8px;
+  }
+  .match-track {
+    height: 6px;
+    background: #2b2830;
+    border-radius: 4px;
+    overflow: hidden;
+  }
+  .match-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--gold-dim), var(--gold));
+    border-radius: 4px;
+  }
+  .match-pct {
+    font-size: 0.7rem;
+    color: var(--gold);
+    margin-top: 4px;
+    text-align: right;
+  }
+
+  .error-box {
+    margin-top: 14px;
+    color: #e0637a;
+    font-size: 0.85rem;
+    text-align: center;
+    display: none;
+  }
+  .error-box.visible { display: block; }
+
+  .footer-note {
+    text-align: center;
+    color: #5c5866;
+    font-size: 0.75rem;
+    margin-top: 30px;
+  }
+  .footer-note strong { color: var(--ink-dim); }
+</style>
+</head>
+<body>
+
+  <div class="marquee">
+    <h1>🎬 Movie Recommender</h1>
+  </div>
+  <p class="subtitle">Pick a film you love — we'll roll the reel and find what plays next.</p>
+
+  <div class="panel">
+    <div class="section-label">Select a Movie</div>
+
+    <form id="recommend-form">
+      <select id="movie-select" required>
+        <option value="" disabled selected>Choose a title...</option>
+        {% for title in titles %}
+        <option value="{{ title }}">{{ title }}</option>
+        {% endfor %}
+      </select>
+
+      <button type="submit" class="go-btn">🎟 Get Recommendations</button>
+    </form>
+
+    <div class="results">
+      <div id="results-heading" class="results-heading">Because you liked this, you might enjoy:</div>
+      <div id="results-list"></div>
+    </div>
+
+    <div id="error" class="error-box"></div>
+  </div>
+
+  <p class="footer-note">Built by <strong>Deep Talreja</strong> &middot; MP Online AI/ML Internship</p>
+
+  <script>
+    const form = document.getElementById('recommend-form');
+    const select = document.getElementById('movie-select');
+    const resultsHeading = document.getElementById('results-heading');
+    const resultsList = document.getElementById('results-list');
+    const errorBox = document.getElementById('error');
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      errorBox.classList.remove('visible');
+      resultsList.innerHTML = '';
+      resultsHeading.classList.remove('visible');
+
+      try {
+        const res = await fetch('/recommend', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ title: select.value }),
+        });
+        const data = await res.json();
+
+        if (!res.ok) {
+          errorBox.textContent = data.error || 'Something went wrong';
+          errorBox.classList.add('visible');
+          return;
+        }
+
+        resultsHeading.classList.add('visible');
+
+        data.recommendations.forEach(rec => {
+          const pct = Math.round(rec.similarity * 100);
+          const card = document.createElement('div');
+          card.className = 'rec-card';
+          card.innerHTML = `
+            <div class="rec-title">${rec.title}</div>
+            <div class="rec-genres">${rec.genres}</div>
+            <div class="match-track"><div class="match-fill" style="width:${pct}%"></div></div>
+            <div class="match-pct">${pct}% genre match</div>
+          `;
+          resultsList.appendChild(card);
+        });
+      } catch (err) {
+        errorBox.textContent = 'Failed to reach the server';
+        errorBox.classList.add('visible');
+      }
+    });
+  </script>
+</body>
+</html>
